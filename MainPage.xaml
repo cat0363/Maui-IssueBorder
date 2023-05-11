@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui_IssueBorder.MainPage">
+
+    <Grid RowDefinitions="44,240,*" ColumnDefinitions="150,150,*">
+
+        <Label Grid.Row="0" Grid.Column="0" Text="Wrap Border" TextColor="Black" VerticalOptions="Center" />
+        <Label Grid.Row="0" Grid.Column="1" Text="None Border" TextColor="Black" VerticalOptions="Center" />
+
+        <Border Grid.Row="1" Grid.Column="0" Stroke="Gray" StrokeShape="RoundRectangle 10,10,10,10" StrokeThickness="1" Margin="10">
+            <ScrollView x:Name="svTestItems1" Orientation="Vertical">
+                <StackLayout x:Name="slTestItems1" Orientation="Vertical">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HeightRequest="44">
+                                <Label Text="{Binding ItemName}" TextColor="Black" FontSize="18" VerticalOptions="Center" HorizontalOptions="Start" />
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+        </Border>
+
+        <ScrollView Grid.Row="1" Grid.Column="1" x:Name="svTestItems2" Orientation="Vertical">
+            <StackLayout x:Name="slTestItems2" Orientation="Vertical">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HeightRequest="44">
+                            <Label Text="{Binding ItemName}" TextColor="Black" FontSize="18" VerticalOptions="Center" HorizontalOptions="Start" />
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+
+</ContentPage>
